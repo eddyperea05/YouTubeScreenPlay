@@ -1,16 +1,17 @@
 package com.youtube.questions;
 
 import com.youtube.ui.VideoUI;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.*;
 
 public class ValidarTitulo implements Question {
-    private String nom = String.valueOf(ObtenerNombreVideo.videoRandom());
+
     @Override
     public Boolean answeredBy(Actor actor) {
-        return nom.equals(VideoUI.LBL_VIDEO.resolveFor(actor).getText());
+        return actor.asksFor(ObtenerModelo.buscar()).getNomVideo()
+                .equals(VideoUI.LBL_VIDEO.resolveFor(actor).getText());
     }
-    public static Question from(){
+
+    public static Question<Boolean> from() {
         return new ValidarTitulo();
     }
 }
