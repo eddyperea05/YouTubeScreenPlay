@@ -1,6 +1,5 @@
 package com.youtube.models;
 
-
 public class VideoModel {
 
   private String nomVideo;

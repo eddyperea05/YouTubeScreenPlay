@@ -8,7 +8,6 @@ public class ObtenerModelo implements Question<VideoModel> {
     public VideoModel answeredBy(Actor actor) {
         VideoModel videoModel = new VideoModel();
         videoModel.setNomVideo(String.valueOf(ObtenerNombreVideo.videoRandom().answeredBy(actor)));
-        System.out.println(videoModel.getNomVideo());
         return videoModel;
     }
 
